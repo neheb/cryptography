@@ -268,6 +268,11 @@ def cryptography_has_get_proto_version():
         "SSL_get_max_proto_version",
     ]
 
+def cryptography_has_x509_cb_issuer_check():
+    return [
+        "X509_V_FLAG_CB_ISSUER_CHECK",
+    ]
+
 
 # This is a mapping of
 # {condition: function-returning-names-dependent-on-that-condition} so we can
@@ -317,4 +322,7 @@ CONDITIONAL_NAMES = {
     "Cryptography_HAS_VERIFIED_CHAIN": cryptography_has_verified_chain,
     "Cryptography_HAS_SRTP": cryptography_has_srtp,
     "Cryptography_HAS_GET_PROTO_VERSION": cryptography_has_get_proto_version,
+    "Cryptography_HAS_X509_CB_ISSUER_CHECK": (
+        cryptography_has_x509_cb_issuer_check
+    ),
 }

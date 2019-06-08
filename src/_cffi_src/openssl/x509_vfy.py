@@ -21,6 +21,7 @@ TYPES = """
 static const long Cryptography_HAS_102_VERIFICATION;
 static const long Cryptography_HAS_110_VERIFICATION_PARAMS;
 static const long Cryptography_HAS_X509_STORE_CTX_GET_ISSUER;
+static const long Cryptography_HAS_X509_CB_ISSUER_CHECK;
 
 typedef ... Cryptography_STACK_OF_ASN1_OBJECT;
 typedef ... Cryptography_STACK_OF_X509_OBJECT;
@@ -256,5 +257,12 @@ void (*X509_STORE_set_get_issuer)(X509_STORE *,
                                   X509_STORE_CTX_get_issuer_fn) = NULL;
 #else
 static const long Cryptography_HAS_X509_STORE_CTX_GET_ISSUER = 1;
+#endif
+
+#ifndef X509_V_FLAG_CB_ISSUER_CHECK
+static const long Cryptography_HAS_X509_CB_ISSUER_CHECK = 0;
+#define X509_V_FLAG_CB_ISSUER_CHECK	0x0
+#else
+static const long Cryptography_HAS_X509_CB_ISSUER_CHECK = 1;
 #endif
 """
