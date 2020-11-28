@@ -4,10 +4,10 @@
 
 
 INCLUDES = """
-/* define our OpenSSL API compatibility level to 1.0.1. Any symbols older than
+/* define our OpenSSL API compatibility level to 1.1.0. Any symbols older than
    that will raise an error during compilation. We can raise this number again
-   after we drop 1.0.2 support in the distant future.  */
-#define OPENSSL_API_COMPAT 0x10001000L
+   after we drop 1.1.0 support in the distant future.  */
+#define OPENSSL_API_COMPAT 0x10100000L
 
 #include <openssl/opensslv.h>
 
